@@ -1,0 +1,93 @@
+/* SVG text styles. Page layout and background are Tailwind classes in index.html. */
+
+.card-svg {
+  /*
+    Keep the exact SVG ratio, but scale up to the largest size that fits
+    both the screen width and the screen height.
+  */
+  width: min(96vw, calc(96svh * 941 / 1672));
+}
+
+.name {
+  font-family: "Noto Serif TC", "Cormorant Garamond", serif;
+  font-size: 92px;
+  font-weight: 600;
+  letter-spacing: 18px;
+  fill: #2b2620;
+}
+
+.name-en {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  fill: #8a6a24;
+}
+
+.monogram {
+  font-family: "Noto Serif TC", "Cormorant Garamond", serif;
+  font-size: 96px;
+  font-weight: 500;
+  fill: #a98538;
+}
+
+.tagline {
+  font-family: "Noto Serif TC", serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 16px;
+  fill: #5c4f3d;
+}
+
+.link-text {
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: 13px;
+  fill: #3a3228;
+  transition: fill 160ms ease;
+}
+
+.link-text.zh {
+  font-family: "Noto Serif TC", serif;
+  font-size: 32px;
+  letter-spacing: 16px;
+}
+
+.link-line {
+  stroke: url(#goldLine);
+  stroke-width: 2.4;
+  opacity: 0.85;
+  transition: opacity 160ms ease;
+}
+
+a:hover .link-text,
+a:focus .link-text {
+  fill: #a98538;
+}
+
+a:hover .link-line,
+a:focus .link-line {
+  opacity: 1;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible .link-line {
+  stroke-width: 4;
+}
+
+@media (max-width: 430px) {
+  .card-svg {
+    width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-text,
+  .link-line {
+    transition: none;
+  }
+}
